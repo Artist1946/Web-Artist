@@ -23,7 +23,8 @@ const defaults = {
 </body>
 </html>
 `,
-    css: `/* CSS (style.css)@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+    css: `
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 body {
     margin: 0;

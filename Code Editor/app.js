@@ -4,9 +4,88 @@ let editor, models = {},
     current = 'html';
 
 const defaults = {
-    html: `<!-- HTML (index.html) -->\n<div class="card">\n  <h2>مرحبًا من Web Artist</h2>\n  <p>اكتب هنا محتوى المود</p>\n  <button class="btn-action">اضغطني</button>\n</div>`,
-    css: `/* CSS (style.css) */\nbody{font-family:Inter, sans-serif} .card{padding:18px;border-radius:12px;background:linear-gradient(180deg,#2a0b4a,#361055);color:#fff}`,
-    javascript: `// JS (script.js) \ndocument.querySelector('.btn-action')?.addEventListener('click', ()=>alert('تم الضغط'));`
+    html: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creative Designer Button</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <a href="https://example.com" target="_blank" class="fancy-button">
+        <svg class="icon" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12H19M19 12L14 7M19 12L14 17" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="text">Server Designer</span>
+    </a>
+
+</body>
+</html>
+`,
+    css: `/* CSS (style.css)@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(145deg, #1a1a1a, #262626);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fancy-button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #6a0dad, #9b59b6);
+    color: white;
+    text-decoration: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(155, 89, 182, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.fancy-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: skewX(-30deg);
+    transition: left 0.6s ease;
+}
+
+.fancy-button:hover::before {
+    left: 100%;
+}
+
+.fancy-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.6);
+}
+
+.fancy-button .icon {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    flex-shrink: 0;
+}
+
+.fancy-button .text {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+`,
+      javascript: `// JS (script.js) لا يوجد شيء يخص هذا المود `
 };
 
 function registerProviders() {

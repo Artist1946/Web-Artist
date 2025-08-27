@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="artist.png" type="image/png">
+
+    <title>𝐖𝐞𝐛 𝐀𝐫𝐭𝐢𝐬𝐭 محرر الكواد</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Monaco loader (أحدث إصدار 0.52.2) -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.52.2/min/vs/loader.js"></script>
+
+    <!-- JSZip & FileSaver (for ZIP download) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+
+<body>
+
+
+    <div class="topbar">
+        <div class="brand">
+            <div class="logo-dot"></div>
+            <div class="brand-text">
+                <div class="small">فنان ويب</div>
+                <div class="big">Web Artist</div>
+            </div>
+        </div>
+
+        <div class="top-actions">
+            <button id="runBtn" class="btn primary">تشغيل</button>
+            <button id="openNew" class="btn">فتح في نافذة جديدة</button>
+            <button id="downloadHtml" class="btn">تحميل HTML</button>
+            <button id="downloadCss" class="btn">تحميل CSS</button>
+            <button id="downloadJs" class="btn">تحميل JS</button>
+            <button id="downloadZip" class="btn">تحميل ZIP</button>
+        </div>
+    </div>
+
+    <main class="main">
+        <section class="left">
+            <div class="editor-header">
+                <div class="tabs">
+                    <button class="tab active" data-lang="html">index.html</button>
+                    <button class="tab" data-lang="css">style.css</button>
+                    <button class="tab" data-lang="javascript">script.js</button>
+                </div>
+            </div>
+            <div id="editor" class="editor" dir="ltr"></div>
+        </section>
+
+        <section class="right">
+            <div class="preview-title">المعاينة</div>
+            <div class="preview-panel">
+                <iframe id="preview" sandbox="allow-scripts"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- سكربت التطبيق -->
+    <script src="app.js"></script>
+</body>
+
+</html>
